@@ -1,0 +1,35 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  theme?: "sans" | "sans-dark";
+}
+
+const {
+  title = "My website",
+  description,
+  theme = "sans",
+} = Astro.props;
+
+const cssFiles: Record<string, string> = {
+  sans: (await import("../styles/sans.css?raw")).default,
+  "sans-dark": (await import("../styles/sans-dark.css?raw")).default,
+};
+
+const css = cssFiles[theme] ?? cssFiles["sans"];
+---
+
+<!doctype html>
+<html lang="en">
+  <title>{title}</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {description && <meta name="description" content={description} />}
+  <style set:html={css}></style>
+  <nav>
+    <a href="/">About</a>
+    <a href="/docs">Docs</a>
+    <a href="/dark">Dark</a>
+  </nav>
+  <slot />
+</html>

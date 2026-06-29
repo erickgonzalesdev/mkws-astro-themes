@@ -1,0 +1,57 @@
+---
+import SansDarkLayout from "../layouts/SansDarkLayout.astro";
+---
+
+<SansDarkLayout title="sans-dark theme">
+  <h1>sans-dark theme</h1>
+  <p>The dark variant of the sans theme. Same minimal layout, same ~35 lines of CSS — just inverted.</p>
+  <p><a href="/">← back to sans (light)</a></p>
+
+  <h2>Typography</h2>
+  <p>Body text is <code>#d4d4d4</code> on <code>#1a1a1a</code>. Headings step up to <code>#f0f0f0</code>. <strong>Bold</strong>, <em>italic</em>, and <code>inline code</code> all work as expected.</p>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+
+  <h2>Lists</h2>
+  <ul>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+  </ul>
+  <ol>
+    <li>Step one</li>
+    <li>Step two</li>
+    <li>Step three</li>
+  </ol>
+
+  <h2>Blockquote</h2>
+  <blockquote>
+    <p>Simple tools outlive complex ones.</p>
+  </blockquote>
+
+  <h2>Code</h2>
+  <pre><code>import SansDarkLayout from "../layouts/SansDarkLayout.astro";
+
+&lt;SansDarkLayout title="My page"&gt;
+  &lt;h1&gt;Hello world&lt;/h1&gt;
+&lt;/SansDarkLayout&gt;</code></pre>
+
+  <h2>Table</h2>
+  <table>
+    <thead><tr><th>Property</th><th>Light</th><th>Dark</th></tr></thead>
+    <tbody>
+      <tr><td>Background</td><td>#fff</td><td>#1a1a1a</td></tr>
+      <tr><td>Text</td><td>#222</td><td>#d4d4d4</td></tr>
+      <tr><td>Headings</td><td>#222</td><td>#f0f0f0</td></tr>
+      <tr><td>Links</td><td>#00e</td><td>#6fa3d8</td></tr>
+      <tr><td>Code bg</td><td>#f4f4f4</td><td>#252525</td></tr>
+    </tbody>
+  </table>
+
+  <hr />
+  <footer>
+    <p>sans-dark theme · <a href="https://mkws.sh">mkws</a></p>
+  </footer>
+</SansDarkLayout>

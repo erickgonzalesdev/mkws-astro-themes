@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="mkws Astro Themes" theme="sans">
+  <h1>mkws Astro Themes</h1>
+  <p>Minimal Astro layouts modeled directly after <a href="https://mkws.sh/">mkws</a>. Classless CSS, centered single-column, no fluff.</p>
+
+  <h2>Themes</h2>
+  <table>
+    <thead>
+      <tr><th>Theme</th><th>Description</th><th>Preview</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>sans</strong></td>
+        <td>Minimal centered single-column, sans-serif — you are here</td>
+        <td><a href="/">view →</a></td>
+      </tr>
+      <tr>
+        <td><strong>sans-dark</strong></td>
+        <td>Dark variant of sans</td>
+        <td><a href="/dark">view →</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Usage</h2>
+  <p>Import the layout you want and use it in any Astro page:</p>
+  <pre><code>---
+import SansLayout from "../layouts/SansLayout.astro";
+// or
+import SansDarkLayout from "../layouts/SansDarkLayout.astro";
+---
+&lt;SansLayout title="My page"&gt;
+  &lt;h1&gt;Hello world&lt;/h1&gt;
+  &lt;p&gt;Your content here.&lt;/p&gt;
+&lt;/SansLayout&gt;</code></pre>
+  <p>Or use <code>BaseLayout</code> with the <code>theme</code> prop — <code>"sans"</code> or <code>"sans-dark"</code>:</p>
+  <pre><code>---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+&lt;BaseLayout title="My page" theme="sans-dark"&gt;
+  &lt;h1&gt;Hello world&lt;/h1&gt;
+&lt;/BaseLayout&gt;</code></pre>
+
+  <footer>
+    <p>Built with <a href="https://astro.build">Astro</a> · Themes from <a href="https://mkws.sh">mkws</a></p>
+  </footer>
+</BaseLayout>

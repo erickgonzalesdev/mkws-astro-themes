@@ -22,10 +22,10 @@ src/
 
 | Theme | Layout | Description |
 |---|---|---|
-| `sans` | `SansLayout.astro` | White background, #222 text, system sans-serif, ~35 lines CSS |
-| `sans-dark` | `SansDarkLayout.astro` | #1a1a1a background, #d4d4d4 text, same minimal CSS |
+| `sans` | `SansLayout.astro` | White `#fff` bg, `#222` text, system sans-serif |
+| `sans-dark` | `SansDarkLayout.astro` | Black `#000` bg, `#eee` text — newnight palette (t.mkws.sh/newnight) |
 
-Both themes include a top nav bar styled after mkws.sh — `padding: 2rem 0`, `text-align: right`, plain underlined links.
+Both themes include a top nav bar styled after mkws.sh — `padding: 2rem 0`, `text-align: right`, plain links with a slide-in underline on hover.
 
 ## Using a theme
 
@@ -73,3 +73,18 @@ Manage with `astro dev stop`, `astro dev status`, `astro dev logs`.
 - No Tailwind, no component libraries, no JavaScript in the browser.
 - `BaseLayout` is the single source of truth for the HTML shell; theme layouts are thin wrappers.
 - Nav links are hardcoded in `BaseLayout` — edit there to change them globally.
+
+## Modernization (minimal)
+
+Both themes include subtle modern touches that stay invisible during normal reading:
+
+- `scroll-behavior: smooth` — anchor jumps animate
+- `text-rendering: optimizeLegibility` + `-webkit-font-smoothing: antialiased` — sharper type
+- `::selection` — accent-colored text highlight
+- `a { transition: color 0.15s }` — link color fades on hover instead of snapping
+- Nav underline slide-in — underline grows left-to-right on hover via `background-size` transition
+- `:focus-visible` ring — clean 2px outline for keyboard navigation
+
+## Images
+
+Images use `display: block; max-width: 100%; height: auto; margin-bottom: 1rem` — same block rhythm as paragraphs, no inline baseline gap. No lazy loading is applied automatically; add `loading="lazy"` per image in content.

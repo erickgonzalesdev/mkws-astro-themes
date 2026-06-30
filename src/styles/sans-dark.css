@@ -31,8 +31,16 @@ a:visited { color: #a78bfa; }
 a:hover { color: #0070f3; }
 
 /* nav links: underline slides in from left on hover */
+nav a + a::before {
+  content: "·";
+  margin: 0 0.4em;
+  opacity: 0.4;
+  text-decoration: none;
+  display: inline-block;
+}
+
 nav a {
-  margin-left: 0.25em;
+  margin-left: 0;
   text-decoration: none;
   background-image: linear-gradient(currentColor, currentColor);
   background-size: 0% 1px;
